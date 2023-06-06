@@ -1,0 +1,38 @@
+attributes:
+  age:
+    type: numeric
+    values: [ 25, 35, 45 ]
+  income:
+    type: numeric
+    values: [ 20000, 40000, 60000, 80000 ]
+  credit_history:
+    type: logical
+    values: [ "bad", "good" ]
+rules:
+  - antecedent:
+      - attribute: age
+        operator: ge
+        value: 25
+      - attribute: income
+        operator: ge
+        value: 40000
+      - attribute: credit_history
+        operator: eq
+        value: "good"
+    consequent:
+      attribute: credit
+      value: "approved"
+  - antecedent:
+      - attribute: age
+        operator: lt
+        value: 25
+    consequent:
+      attribute: credit
+      value: "rejected"
+  - antecedent:
+      - attribute: credit_history
+        operator: eq
+        value: "bad"
+    consequent:
+      attribute: credit
+      value: "rejected"
