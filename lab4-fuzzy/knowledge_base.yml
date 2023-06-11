@@ -1,0 +1,58 @@
+attributes:
+  age:
+    type: numeric
+    fuzzy_sets:
+      young: [ 0, 0, 25 ]
+      middle_aged: [ 25, 35, 50 ]
+      old: [ 40, 75, 100 ]
+  income:
+    type: numeric
+    fuzzy_sets:
+      low: [ 0, 0, 40000 ]
+      medium: [ 20000, 60000, 100000 ]
+      high: [ 60000, 1000000, 1000000 ]
+  credit_history:
+    type: logical
+    values: [ "bad", "good" ]
+rules:
+  - antecedent:
+      - attribute: age
+        fuzzy_set: middle_aged
+      - attribute: income
+        fuzzy_set: medium
+      - attribute: credit_history
+        operator: eq
+        value: "good"
+    consequent:
+      attribute: credit
+      value: "approved"
+  - antecedent:
+      - attribute: age
+        fuzzy_set: middle_aged
+      - attribute: income
+        fuzzy_set: high
+      - attribute: credit_history
+        operator: eq
+        value: "good"
+    consequent:
+      attribute: credit
+      value: "approved"
+  - antecedent:
+      - attribute: age
+        fuzzy_set: young
+    consequent:
+      attribute: credit
+      value: "rejected"
+  - antecedent:
+      - attribute: income
+        fuzzy_set: low
+    consequent:
+      attribute: credit
+      value: "rejected"
+  - antecedent:
+      - attribute: credit_history
+        operator: eq
+        value: "bad"
+    consequent:
+      attribute: credit
+      value: "rejected"
