@@ -62,8 +62,7 @@ rules:
       value: "rejected"
   - antecedent:
       - attribute: credit_history
-        operator: eq
-        value: "bad"
+        fuzzy_set: bad
     consequent:
       attribute: credit
       value: "rejected"
