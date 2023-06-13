@@ -3,20 +3,20 @@ attributes:
     type: numeric
     fuzzy_sets:
       young: [ 0, 0, 18, 20 ]
-      middle_aged: [ 20, 30, 50, 70 ]
-      old: [ 70, 90, 100, 120 ]
+      middle_aged: [ 20, 25, 60, 65 ]
+      old: [ 55, 65, 110, 120 ]
   income:
     type: numeric
     fuzzy_sets:
-      low: [ 0, 0, 20000, 30000 ]
-      medium: [ 30000, 40000, 100000, 110000 ]
-      high: [ 100000, 200000, 300000, 400000 ]
+      low: [ 0, 0, 30000, 40000 ]
+      medium: [ 30000, 40000, 150000, 180000 ]
+      high: [ 150000, 180000, 200000, 210000 ]
   credit_history:
     type: numeric
     fuzzy_sets:
-      bad: [0, 0.1, 0.3, 0.5]
-      average: [0.3, 0.5, 0.7, 1]
-      good: [0.5, 0.7, 1, 1]
+      bad: [ 0, 0, 0, 0.3 ]
+      average: [ 0.3, 0.4, 0.9, 1 ]
+      good: [ 0.9, 1, 1, 1 ]
 rules:
   - antecedent:
       - attribute: age
