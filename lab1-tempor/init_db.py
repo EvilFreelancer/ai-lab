@@ -21,10 +21,8 @@ cursor.execute('''
 np.random.seed(0)
 df_simulation = pd.DataFrame({
     'event': ['event' + str(i) for i in range(5)],
-    'start_time': pd.to_datetime(
-        np.random.choice(pd.date_range('2023-06-01 10:00:00', '2023-06-01 11:30:00', freq='1min'), 5)),
-    'end_time': pd.to_datetime(
-        np.random.choice(pd.date_range('2023-06-01 10:15:00', '2023-06-01 11:45:00', freq='1min'), 5))
+    'start_time': pd.to_datetime(np.random.choice(pd.date_range('2023-06-01 10:00:00', '2023-06-01 11:30:00', freq='1min'), 5)),
+    'end_time': pd.to_datetime(np.random.choice(pd.date_range('2023-06-01 10:15:00', '2023-06-01 11:45:00', freq='1min'), 5))
 })
 
 # Для каждой записи в DataFrame
