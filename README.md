@@ -18,5 +18,6 @@
 ## Использованная литература
 
 * [Учебное пособие "Системы искусственного интеллекта" часть 1, Н.Е. Сергеев, 2016 год](http://ntb.tgn.sfedu.ru/UML/UML_5547_1.pdf)
+* [A Framework for Representing Knowledge, M. Minsky, 1974 год](https://dspace.mit.edu/handle/1721.1/6089)
 * [Документация по библиотеке `scikit-fuzzy`](https://pythonhosted.org/scikit-fuzzy/)
 * [Документация по библиотеке `matplotlib`](https://matplotlib.org/stable/contents.html)
